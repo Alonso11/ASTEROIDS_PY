@@ -49,6 +49,12 @@ def main():
             if space_rocks.collision(player1):
                 print("Game over!")
                 sys.exit()
+        for space_dection in list(asteroids):
+            for bullet_there in list(shotting):
+                if space_dection.collision(bullet_there):
+                    bullet_there.kill()
+                    space_dection.kill()
+
         pygame.display.flip()
         clock.tick(60)
 if __name__ == "__main__":
