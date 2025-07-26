@@ -53,7 +53,7 @@ def main():
             for bullet_there in list(shotting):
                 if space_dection.collision(bullet_there):
                     bullet_there.kill()
-                    space_dection.kill()
+                    space_dection.split()
 
         pygame.display.flip()
         clock.tick(60)
