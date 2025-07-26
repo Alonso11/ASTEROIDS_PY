@@ -3,6 +3,7 @@ import pygame
 import player
 import asteroid
 import asteroidfield
+import sys
 
 def main():
     pygame.init()
@@ -41,6 +42,10 @@ def main():
         clock.tick(60)
         dt =clock.get_time()/1000
         updatable.update(dt)
+        for space_rocks in asteroids:
+            if space_rocks.collision(player1):
+                print("Game over!")
+                sys.exit()
 
 if __name__ == "__main__":
     main()
